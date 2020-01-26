@@ -2,13 +2,15 @@
 
 class Array
 {
-//private:
-public:
+private:
     //array
     int* array;
 
     //array size
     int size;
+
+    //default array size
+    static constexpr int default_size = 128;
 
 public:
     //default constructor (128 elements)
@@ -49,7 +51,10 @@ public:
     int Sum();
 
     //returns pointer to array containing only the array's odd elements
-    int* OddNumbers();
+    int* PointerToOddNumbers();
+
+    //returns array containing only the array's odd elements
+    Array OddNumbers();
 };
 
 /*

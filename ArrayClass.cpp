@@ -2,8 +2,8 @@
 #include <iostream>
 #include <algorithm>
 
-//default constructor (delegates to custom constructor with 128 elements)
-Array::Array() : Array(128)
+//default constructor (delegates to custom constructor, creates array of default_size elements)
+Array::Array() : Array(default_size)
 {
 }
 
@@ -30,7 +30,7 @@ Array::Array(Array &rhs)
 //default destructor
 Array::~Array()
 {
-	delete []array;
+	delete[] array;
 }
 
 //returns array size
@@ -120,18 +120,88 @@ void Array::RemoveLast()
 //inverts the order of array's elements
 void Array::InvertOrder()
 {
-
+	//create container
+	int* temp = new int[size];
+	//reverse order of array elements into container
+	for (int i = 0; i < size; i++)
+	{
+		temp[size-1-i] = array[i];
+	}
+	//export
+	delete[] array;
+	array = temp;
 }
 
 //returns the sum of array's elements
 int Array::Sum()
 {
-	return 0;
+	int sum = 0;
+	for (int i = 0; i < size; i++)
+	{
+		sum += array[i];
+	}
+	return sum;
 }
 
 //returns pointer to array containing only the array's odd elements
-int* Array::OddNumbers()
+int* Array::PointerToOddNumbers()
 {
-	return nullptr;
+	int NumberOfOddElements = 0;
+	//determine amount of odd elements
+	for (int i = 0; i < size; i++)
+	{
+		// if the element is odd
+		if (array[i]%2 == 1)
+		{
+			//increment counter
+			NumberOfOddElements++;
+		}
+	}
+	//create array
+	int* OddArray = new int[NumberOfOddElements];
+	//fill array with the odd numbers
+	int j = 0;
+	for (int i = 0; i < size && j < NumberOfOddElements; i++)
+	{
+		// if the element is odd
+		if (array[i] % 2 == 1)
+		{
+			//insert into array
+			OddArray[j] = array[i];
+			j++;
+		}
+	}
+	return OddArray;
+}
+
+//returns array containing only the array's odd elements
+Array Array::OddNumbers()
+{
+	int NumberOfOddElements = 0;
+	//determine amount of odd elements
+	for (int i = 0; i < size; i++)
+	{
+		// if the element is odd
+		if (array[i] % 2 == 1)
+		{
+			//increment counter
+			NumberOfOddElements++;
+		}
+	}
+	//create array
+	Array OddArray(NumberOfOddElements);
+	//fill array with the odd numbers
+	int j = 0;
+	for (int i = 0; i < size && j < NumberOfOddElements; i++)
+	{
+		// if the element is odd
+		if (array[i] % 2 == 1)
+		{
+			//insert into array
+			OddArray.InsertAtEnd(array[i]);
+			j++;
+		}
+	}
+	return OddArray;
 }
 
