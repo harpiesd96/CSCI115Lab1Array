@@ -9,7 +9,16 @@ int main()
     foo.array[0] = 1;
     foo.array[1] = 2;
     foo.Print();
-}
+    std::cout << "\n";
+
+    foo.InsertAtBeginning(10);
+    foo.Print();
+    std::cout << "\n";
+
+    foo.InsertAtEnd(20);
+    foo.Print();
+    std::cout << "\n";
+ }
 
 /*
 

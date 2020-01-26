@@ -18,7 +18,7 @@ public:
     Array(int size);
 
     //copy constructor
-    //Array();
+    Array(Array &rhs);
 
     //default destructor
     ~Array();
