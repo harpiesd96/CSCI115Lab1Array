@@ -88,13 +88,33 @@ void Array::InsertAtEnd(int input)
 //removes first element of array
 void Array::RemoveFirst()
 {
-	
+	//create a new array of size 1 smaller
+	size--;
+	int* NewArray = new int[size];
+	//copy elements of old array (except first) into new array
+	for (int i = 1; i < size+1; i++)
+	{
+		NewArray[i-1] = array[i];
+	}
+	//move pointers
+	delete[] array; //sends old data to void
+	array = NewArray; //points variable to new data
 }
 
 //removes last element of array
 void Array::RemoveLast()
 {
-
+	//create a new array of size 1 smaller
+	size--;
+	int* NewArray = new int[size];
+	//copy elements of old array (except last) into new array
+	for (int i = 0; i < size; i++)
+	{
+		NewArray[i] = array[i];
+	}
+	//move pointers
+	delete[] array; //sends old data to void
+	array = NewArray; //points variable to new data
 }
 
 //inverts the order of array's elements

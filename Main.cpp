@@ -18,6 +18,14 @@ int main()
     foo.InsertAtEnd(20);
     foo.Print();
     std::cout << "\n";
+
+    foo.RemoveFirst();
+    foo.Print();
+    std::cout << "\n";
+
+    foo.RemoveLast();
+    foo.Print();
+    std::cout << "\n";
  }
 
 /*
