@@ -174,34 +174,19 @@ int* Array::PointerToOddNumbers()
 	return OddArray;
 }
 
-//returns array containing only the array's odd elements
+//returns array class containing only the array's odd elements
 Array Array::OddNumbers()
 {
-	int NumberOfOddElements = 0;
-	//determine amount of odd elements
+	Array OddArray(0);
+	//scan whole array
 	for (int i = 0; i < size; i++)
 	{
 		// if the element is odd
 		if (array[i] % 2 == 1)
 		{
-			//increment counter
-			NumberOfOddElements++;
-		}
-	}
-	//create array
-	Array OddArray(NumberOfOddElements);
-	//fill array with the odd numbers
-	int j = 0;
-	for (int i = 0; i < size && j < NumberOfOddElements; i++)
-	{
-		// if the element is odd
-		if (array[i] % 2 == 1)
-		{
-			//insert into array
+			//add to container
 			OddArray.InsertAtEnd(array[i]);
-			j++;
 		}
 	}
 	return OddArray;
 }
-

@@ -6,35 +6,45 @@ int main()
     std::cout << "Hello World!\n\n";
 
     Array foo(1);
+    foo.InsertAtBeginning(8);
+    foo.InsertAtBeginning(7);
+    foo.InsertAtBeginning(6);
+    foo.InsertAtBeginning(5);
+    foo.InsertAtBeginning(4);
+    foo.InsertAtBeginning(3);
     foo.InsertAtBeginning(2);
     foo.InsertAtBeginning(1);
+
+    std::cout << "Print\n";
     foo.Print();
-    std::cout << "\n";
+    std::cout << "\n\n";
 
-
-
+    std::cout << "InsertAtBeginning\n";
     foo.InsertAtBeginning(10);
     foo.Print();
-    std::cout << "\n";
+    std::cout << "\n\n";
 
+    std::cout << "InsertAtEnd\n";
     foo.InsertAtEnd(20);
     foo.Print();
-    std::cout << "\n";
+    std::cout << "\n\n";
 
+    std::cout << "RemoveFirst\n";
     foo.RemoveFirst();
     foo.Print();
-    std::cout << "\n";
+    std::cout << "\n\n";
 
+    std::cout << "RemoveLast\n";
     foo.RemoveLast();
     foo.Print();
-    std::cout << "\n";
+    std::cout << "\n\n";
 
+    std::cout << "Sum\n";
     int ArraySum = 0;
     ArraySum = foo.Sum();
-    std::cout << ArraySum << "\n";
+    std::cout << ArraySum << "\n\n";
 
-
-
+    /*
     int* OddArray = foo.PointerToOddNumbers();
     //print array
     int size = 8;
@@ -43,9 +53,8 @@ int main()
         std::cout << OddArray[i] << ", ";
     }
     std::cout << OddArray[size - 1];
-    std::cout << ArraySum << "\n";
-
-
+    std::cout << ArraySum << "\n\n";
+    */
 
     /*
     //Array OddArray = foo.OddNumbers();
@@ -54,12 +63,19 @@ int main()
     std::cout << "\n";
    */
 
+    std::cout << "OddNumbers\n";
+    foo.OddNumbers().Print();
+    std::cout << "\n\n";
+
+    std::cout << "Copy ctr\n";
     Array Copy = foo;
     Copy.Print();
+    std::cout << "\n\n";
 
+    std::cout << "InvertOrder\n";
     foo.InvertOrder();
     foo.Print();
-    std::cout << "\n";
+    std::cout << "\n\n";
  }
 
 /*
