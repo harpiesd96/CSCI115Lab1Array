@@ -20,14 +20,14 @@ public:
     Array(int size);
 
     //copy constructor
-    Array(Array &rhs);
+    Array(const Array &rhs);
 
     //default destructor
     ~Array();
 
 
     //returns array size
-    int GetSize();
+    int GetSize() const;
 
     //display array
     void Print();

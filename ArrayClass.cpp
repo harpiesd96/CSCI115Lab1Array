@@ -17,7 +17,7 @@ Array::Array(int size)
 }
 
 //copy constructor
-Array::Array(Array &rhs)
+Array::Array(const Array &rhs)
 {
 	size = rhs.GetSize();
 	array = new int[size];
@@ -34,7 +34,7 @@ Array::~Array()
 }
 
 //returns array size
-int Array::GetSize()
+int Array::GetSize() const
 {
 	return size;
 }

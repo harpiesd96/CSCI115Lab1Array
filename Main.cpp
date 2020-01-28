@@ -48,10 +48,14 @@ int main()
 
 
     /*
-    Array OddArray = foo.OddNumbers();
+    //Array OddArray = foo.OddNumbers();
+    Array OddArray(foo.OddNumbers);
     OddArray.Print();
     std::cout << "\n";
-    */
+   */
+
+    Array Copy = foo;
+    Copy.Print();
 
     foo.InvertOrder();
     foo.Print();
