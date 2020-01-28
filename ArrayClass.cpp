@@ -143,6 +143,7 @@ int Array::Sum()
 	return sum;
 }
 
+/*
 //returns pointer to array containing only the array's odd elements
 int* Array::PointerToOddNumbers()
 {
@@ -173,6 +174,7 @@ int* Array::PointerToOddNumbers()
 	}
 	return OddArray;
 }
+*/
 
 //returns array class containing only the array's odd elements
 Array Array::OddNumbers()

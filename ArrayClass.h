@@ -50,10 +50,12 @@ public:
     //returns the sum of array's elements
     int Sum();
 
+    /*
     //returns pointer to array containing only the array's odd elements
     int* PointerToOddNumbers();
+    */
 
-    //returns array containing only the array's odd elements
+    //returns array class containing only the array's odd elements
     Array OddNumbers();
 };
 
